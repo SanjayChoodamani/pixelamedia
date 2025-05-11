@@ -22,6 +22,7 @@ const innovatorLogos = [
 const Innovators = () => {
     const scrollRef = useRef(null);
     const containerRef = useRef(null);
+    const animationRef = useRef(null); // To track animation frame
 
     useEffect(() => {
         const scrollContainer = scrollRef.current;
@@ -46,7 +47,7 @@ const Innovators = () => {
         cloneItems();
         
         let scrollPosition = 0;
-        const speed = 1; // Adjust speed as needed
+        const speed = 2; 
         
         const scroll = () => {
             if (!scrollContainer.isConnected) return; // Stop if element is removed
@@ -56,23 +57,38 @@ const Innovators = () => {
             // Reset position when we reach the end of original items
             if (scrollPosition >= scrollContainer.scrollWidth / 2) {
                 scrollPosition = 0;
+                scrollContainer.scrollLeft = 0; // Reset instantly to avoid jumps
+            } else {
+                scrollContainer.scrollLeft = scrollPosition;
             }
             
-            scrollContainer.scrollLeft = scrollPosition;
-            requestAnimationFrame(scroll);
+            animationRef.current = requestAnimationFrame(scroll);
         };
         
-        const scrollAnimation = requestAnimationFrame(scroll);
+        // Start the animation
+        animationRef.current = requestAnimationFrame(scroll);
         
         // Add pause on hover
-        const handleMouseEnter = () => cancelAnimationFrame(scrollAnimation);
-        const handleMouseLeave = () => requestAnimationFrame(scroll);
+        const handleMouseEnter = () => {
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current);
+                animationRef.current = null;
+            }
+        };
+        
+        const handleMouseLeave = () => {
+            if (!animationRef.current) {
+                animationRef.current = requestAnimationFrame(scroll);
+            }
+        };
         
         container.addEventListener('mouseenter', handleMouseEnter);
         container.addEventListener('mouseleave', handleMouseLeave);
         
         return () => {
-            cancelAnimationFrame(scrollAnimation);
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current);
+            }
             if (container) {
                 container.removeEventListener('mouseenter', handleMouseEnter);
                 container.removeEventListener('mouseleave', handleMouseLeave);
@@ -87,7 +103,6 @@ const Innovators = () => {
                     Trusted By Innovators
                 </h1>
 
-                {/* Carousel container with ref for better control */}
                 <div 
                     ref={containerRef} 
                     className="relative overflow-hidden"
@@ -116,7 +131,6 @@ const Innovators = () => {
                         ))}
                     </div>
                     
-                    {/* Gradient overlays for fading effect */}
                     <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#111111] to-transparent z-10" />
                     <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#111111] to-transparent z-10" />
                 </div>

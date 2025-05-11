@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import RightArrow from '../assets/icons/rightArrow.png'
 
 const Hero = () => {
     return (
@@ -19,6 +20,7 @@ const Hero = () => {
                 <Link to="/contact">
                     <button className="px-8 py-2 rounded-full font-medium text-white text-lg bg-gradient-to-r from-[#00B78E] to-[#002E90] hover:shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto font-[Space_Grotesk]">
                         Let's Build Something Beautiful
+                        <img src={RightArrow} alt="right arrow" className="ml-1.5 w-5 mr-0 h-4" />
                     </button>
                 </Link>
             </div>
