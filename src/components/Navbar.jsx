@@ -26,7 +26,7 @@ const Navbar = () => {
                                 <Link to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`} 
                                       className="py-2 font-medium transition-colors duration-300 group-hover:text-[#02a581]">
                                     {item}
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#02a581] group-hover:w-full transition-all duration-300"></span>
+                                    {/* <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#02a581] group-hover:w-full transition-all duration-300"></span> */}
                                 </Link>
                             </li>
                         ))}
