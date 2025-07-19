@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Step from '../assets/icons/step.png'
 import Dev from '../assets/icons/dev.png'
 import Section from '../assets/icons/section.png'
@@ -13,42 +12,42 @@ const servicesData = [
         title: 'Digital Marketing',
         description: 'Data-powered strategies to boost your visibility, engagement, and digital presence across all platforms.',
         features: ['SEO Optimization', 'Social Media Marketing', 'Content Strategy', 'PPC Campaigns'],
-        link: '/contact'
+        link: `https://wa.me/918867570215?text=Hi%2C%20I'm%20interested%20in%20your%20services`
     },
     {
         icon: Dev,
         title: 'Web Development',
         description: 'Custom, scalable, and fast websites built using modern web technologies and frameworks.',
         features: ['React Development', 'Node.js Backend', 'Database Design', 'API Integration'],
-        link: '/contact'
+        link: `https://wa.me/918867570215?text=Hi%2C%20I'm%20interested%20in%20your%20services`
     },
     {
         icon: Section,
         title: 'UI/UX Design',
         description: 'User-centered designs that create intuitive, enjoyable experiences across all digital platforms.',
         features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-        link: '/contact'
+        link: `https://wa.me/918867570215?text=Hi%2C%20I'm%20interested%20in%20your%20services`
     },
     {
         icon: Edit,
         title: 'Graphic Design',
         description: 'Stunning visuals, brand kits, and creative assets that make your brand stand out.',
         features: ['Logo Design', 'Brand Identity', 'Print Design', 'Digital Assets'],
-        link: '/contact'
+        link: `https://wa.me/918867570215?text=Hi%2C%20I'm%20interested%20in%20your%20services`
     },
     {
         icon: Bolt,
         title: 'Product Marketing',
         description: 'From strategy to promotion — we help your product reach the right audience at the right time.',
         features: ['Market Research', 'Launch Strategy', 'Campaign Management', 'Analytics'],
-        link: '/contact'
+        link: `https://wa.me/918867570215?text=Hi%2C%20I'm%20interested%20in%20your%20services`
     },
     {
         icon: Monitor,
         title: 'Web Design',
         description: 'Pixel-perfect layouts with strong visual hierarchy and modern design principles.',
         features: ['Responsive Design', 'Landing Pages', 'E-commerce Design', 'Mobile Optimization'],
-        link: '/contact'
+        link: `https://wa.me/918867570215?text=Hi%2C%20I'm%20interested%20in%20your%20services`
     }
 ]
 
@@ -76,12 +75,12 @@ const ServiceCard = ({ icon, title, description, features, link, index, isVisibl
                 ))}
             </ul>
             
-            <Link 
-                to={link} 
+            <a 
+                href={link} 
                 className="bg-gradient-to-r from-[#00B78E] to-[#002E90] text-white px-6 py-3 rounded-lg font-medium text-center hover:scale-105 transition-all duration-300 group-hover:shadow-lg"
             >
                 Get Started
-            </Link>
+            </a>
         </div>
     )
 }
