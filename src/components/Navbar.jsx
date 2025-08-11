@@ -13,10 +13,10 @@ const Navbar = () => {
         <nav className="bg-[#111111] text-white w-full z-50 shadow-lg box-border">
             <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 sm:px-6 md:px-8">
                 {/* Logo and Brand */}
-                <div className="flex items-center space-x-2">
+                <a href='/' className="flex items-center space-x-2">
                     <img src={Logo} alt="logo" className="h-10 w-10" />
                     <p className="text-xl font-semibold">PixelaMedia</p>
-                </div>
+                </a>
                 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex">
