@@ -4,6 +4,7 @@ import WhatWeOffer from '../components/WhatWeOffer'
 import WhyChoose from '../components/WhyChoose'
 import Footer from '../components/Footer'
 import Whatsapp from '../components/Whatsapp'
+import OurProjects from '../components/OurProjects'
 
 const Services = () => {
     const [visibleSections, setVisibleSections] = useState({});
@@ -39,6 +40,9 @@ const Services = () => {
             <Navbar/>
             <div id="what-we-offer" data-animate>
                 <WhatWeOffer isVisible={visibleSections['what-we-offer']} />
+            </div>
+            <div id="our-projects" data-animate>
+                <OurProjects isVisible={visibleSections['our-projects']} /> 
             </div>
             <div id="why-choose" data-animate>
                 <WhyChoose isVisible={visibleSections['why-choose']} />

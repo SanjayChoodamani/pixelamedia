@@ -21,7 +21,7 @@ const Navbar = () => {
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex">
                     <ul className="flex space-x-8">
-                        {['Home', 'About Us', 'Services', 'Contact'].map((item, index) => (
+                        {['Home', 'About Us', 'Projects', 'Services', 'Contact'].map((item, index) => (
                             <li key={index} className="group relative cursor-pointer">
                                 <Link to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`} 
                                       className="py-2 font-medium transition-colors duration-300 group-hover:text-[#02a581]">
@@ -57,7 +57,7 @@ const Navbar = () => {
             {isOpen && (
                 <div className="md:hidden py-3 border-t border-gray-700 px-4">
                     <ul className="flex flex-col space-y-4">
-                        {['Home', 'About Us', 'Services', 'Contact'].map((item, index) => (
+                        {['Home', 'About Us', 'Projects', 'Services', 'Contact'].map((item, index) => (
                             <li key={index} className="group">
                                 <Link 
                                     to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`} 

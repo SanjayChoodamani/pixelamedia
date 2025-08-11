@@ -8,6 +8,7 @@ import Journey from '../components/Journey'
 import SeeBrand from '../components/SeeBrand'
 import Footer from '../components/Footer'
 import Whatsapp from '../components/Whatsapp'
+import OurProjects from '../components/OurProjects' // <-- Add import
 
 const Home = () => {
     const [visibleSections, setVisibleSections] = useState({});
@@ -47,6 +48,9 @@ const Home = () => {
             </div>
             <div id="what-we-do" data-animate>
                 <WhatWeDo isVisible={visibleSections['what-we-do']} />
+            </div>
+            <div id="our-projects" data-animate>
+                <OurProjects isVisible={visibleSections['our-projects']} /> 
             </div>
             <div id="innovators" data-animate>
                 <Innovators isVisible={visibleSections['innovators']} />
