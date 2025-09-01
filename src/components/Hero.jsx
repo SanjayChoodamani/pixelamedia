@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
+import {Link} from 'react-router-dom';
 
 const Hero = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -98,7 +99,7 @@ const Hero = () => {
                     <div className={`transition-all duration-1000 ease-out delay-600 ${
                         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                     }`}>
-                    <a href="https://wa.me/918867570215?text=Hi%2C%20I'm%20interested%20in%20your%20services" className="group relative inline-block">
+                    <Link to="/services" className="group relative inline-block">
                         <button className="group relative px-8 py-4 rounded-full font-medium text-white text-lg bg-gradient-to-r from-[#00B78E] to-[#002E90] hover:from-[#00D4A5] hover:to-[#0040B0] transition-all duration-300 flex items-center gap-2 mx-auto font-[Space_Grotesk] hover:scale-105 hover:shadow-2xl hover:shadow-[#00B78E]/25 transform">
                             <span className="relative z-10">Let's Build Something Beautiful</span>
                             <ChevronRight 
@@ -109,7 +110,7 @@ const Hero = () => {
                             {/* Button glow effect */}
                             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00B78E] to-[#002E90] opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
                         </button>
-                    </a>
+                    </Link>
                     </div>
                 </div>
 
